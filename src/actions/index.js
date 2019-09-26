@@ -15,3 +15,11 @@ export const buyItem = (buy) => {
         payload: buy
     }
 }
+//change last one to price total...
+export const buyItem = (buy) => {
+    console.log(buy)
+    return {
+        type: "BUY_ITEM",
+        payload: buy
+    }
+}
