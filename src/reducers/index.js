@@ -1,6 +1,6 @@
-import {REMOVE_FEATURE} from "../actions";
+// import {REMOVE_FEATURE} from "../actions";
 
-const initialState = {
+export const initialState = {
     additionalPrice: 0,
     car: {
         price: 26395,
@@ -18,7 +18,7 @@ const initialState = {
 
 }
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case "REMOVE_FEATURE":
             return {

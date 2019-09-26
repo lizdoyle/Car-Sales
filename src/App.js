@@ -5,7 +5,7 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
-import reducer from "./reducers/index"
+import {reducer, initialState} from "./reducers";
 
 import {connect} from "react-redux";
 
@@ -35,4 +35,8 @@ const App = () => {
   );
 };
 
-export default App;
+const mapStateToProps = state => {
+  return { }
+}
+
+export default connect(mapStateToProps, {})(App);
