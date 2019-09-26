@@ -1,11 +1,20 @@
 export const REMOVE_FEATURE = "REMOVE_FEATURE";
+export const ADD_FEATURE = "ADD_FEATURE";
 export const BUY_ITEM = "BUY_ITEM";
 
-export const removeFeature = (feature) => {
-    console.log(feature)
+export const removeFeature = (rmvFeat) => {
+    console.log(rmvFeat)
     return {
         type: "REMOVE_FEATURE",
-        payload: feature
+        payload: rmvFeat
+    }
+}
+
+export const addFeature = (addFeat) => {
+    console.log(addFeat)
+    return {
+        type: "ADD_FEATURE",
+        payload: addFeat
     }
 }
 

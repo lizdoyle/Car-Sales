@@ -20,7 +20,13 @@ export const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
+        //total must update as the features are added and removed
         case "REMOVE_FEATURE":
+            return {
+                ...state,
+
+            }
+        case "ADD_FEATURE":
             return {
                 ...state,
 
@@ -28,7 +34,6 @@ export const reducer = (state = initialState, action) => {
         case "BUY_ITEM":
             return {
                 ...state,
-
             }
 
     
