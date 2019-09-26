@@ -11,15 +11,15 @@ import {connect} from "react-redux";
 
 import {removeFeat, buyItem} from "./actions";
 
-const App = props => {
+const App = (props) => {
 
-  const [remove, setRemove] = useState();
+  const [remove, setRemove] = useState(removeFeat);
   const [buy, setBuy] = useState(false)
 
   const removeFeature = item => {
     // dispatch an action here to remove an 
     item.preventDefault();
-    setRemove(remove = '')
+    setRemove(remove)
   };
 
   const buyItem = item => {
@@ -31,12 +31,12 @@ const App = props => {
   return (
     <div className="boxes">
       <div className="box">
-        <Header car={car} />
-        <AddedFeatures car={car} />
+        <Header car={props.car} />
+        <AddedFeatures car={props.car} remove={removeFeature} />
       </div>
       <div className="box">
-        <AdditionalFeatures store={store} />
-        <Total car={car} additionalPrice={additionalPrice} />
+        <AdditionalFeatures store={props.store} buy={buyItem} />
+        <Total car={props.car} additionalPrice={props.additionalPrice} />
       </div>
     </div>
   );
@@ -50,4 +50,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, {removeFeat, buyItem})(App);
