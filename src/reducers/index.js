@@ -26,11 +26,6 @@ export const reducer = (state = initialState, action) => {
                 ...state,
 
             }
-        case "ADD_FEATURE":
-            return {
-                ...state,
-
-            }
         case "BUY_ITEM":
             return {
                 ...state,
