@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
 
+import { connect } from "react-redux";
+
+import {removeFeat} from "../actions/index";
+
+
 const AddedFeature = props => {
 
   const [removeFeat, setRemoveFeat] = useState();
@@ -16,4 +21,6 @@ const AddedFeature = props => {
   );
 };
 
-export default AddedFeature;
+
+
+export default connect(null, removeFeat)(AddedFeature);

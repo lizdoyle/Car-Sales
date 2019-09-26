@@ -2,7 +2,7 @@ export const REMOVE_FEATURE = "REMOVE_FEATURE";
 export const ADD_FEATURE = "ADD_FEATURE";
 export const BUY_ITEM = "BUY_ITEM";
 
-export const removeFeature = (rmvFeat) => {
+export const removeFeat = (rmvFeat) => {
     console.log(rmvFeat)
     return {
         type: "REMOVE_FEATURE",
