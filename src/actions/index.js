@@ -1,5 +1,6 @@
 export const REMOVE_FEATURE = "REMOVE_FEATURE";
 export const BUY_ITEM = "BUY_ITEM";
+export const TOTAL_PRICE="TOTAL_PRICE";
 
 export const removeFeat = (rmvFeat) => {
     console.log(rmvFeat)
@@ -16,10 +17,10 @@ export const buyItem = (buy) => {
     }
 }
 //change last one to price total...
-export const buyItem = (buy) => {
-    console.log(buy)
+export const totalPrice = (total) => {
+    console.log(total)
     return {
-        type: "BUY_ITEM",
-        payload: buy
+        type: "TOTAL_PRICE",
+        payload: total
     }
 }

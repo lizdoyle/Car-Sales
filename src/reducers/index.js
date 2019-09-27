@@ -1,4 +1,8 @@
-// import {REMOVE_FEATURE} from "../actions";
+import { REMOVE_FEATURE } from "../actions";
+import { BUY_ITEM } from "../actions";
+import { TOTAL_PRICE } from "../actions";
+
+
 
 export const initialState = {
     additionalPrice: 0,
@@ -21,15 +25,21 @@ export const initialState = {
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
         //total must update as the features are added and removed
-        case "REMOVE_FEATURE":
+        case REMOVE_FEATURE:
             return {
                 ...state,
+                features: [...initialState]
 
             }
-        case "BUY_ITEM":
+        case BUY_ITEM:
             return {
                 ...state,
-                car: {...state.car, features: [...state.features, action.payload]}
+                car: {...state.car, features: [...state.car.features, action.payload]}
+            }
+        case TOTAL_PRICE:
+            return {
+                ...state,
+                car: {...state.car, car: [state.car.price === state.car.price + state.car.features.price]}
             }
 
     
