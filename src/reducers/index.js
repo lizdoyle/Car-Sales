@@ -1,6 +1,5 @@
 import { REMOVE_FEATURE } from "../actions";
 import { BUY_ITEM } from "../actions";
-import { TOTAL_PRICE } from "../actions";
 
 
 
@@ -28,20 +27,14 @@ export const reducer = (state = initialState, action) => {
         case REMOVE_FEATURE:
             return {
                 ...state,
-                features: [...initialState]
-
+                car: {...state.car, features: [...state.car.features, action.payload]}
             }
         case BUY_ITEM:
             return {
                 ...state,
-                car: {...state.car, features: [...state.car.features, action.payload]}
+                car: {...state.car, features: [...state.car.features, action.payload], price: {...state.car.price}},
+                additionalPrice: {...state.additionalPrice === state.car.features.price}
             }
-        case TOTAL_PRICE:
-            return {
-                ...state,
-                car: {...state.car, car: [state.car.price === state.car.price + state.car.features.price]}
-            }
-
     
 
     default:

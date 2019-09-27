@@ -6,6 +6,8 @@ import { buyItem } from "../actions/index";
 
 const AdditionalFeature = props => {
 
+  console.log("NEWPRICE:", props.feature.price)
+
   return (
     <li>
       {/* Add an onClick that will let you add a feature to your car */}

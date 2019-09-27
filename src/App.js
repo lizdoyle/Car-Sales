@@ -9,24 +9,24 @@ import {connect} from "react-redux";
 
 //import actions instead of reducers - my note
 
-import {removeFeat, buyItem, totalPrice} from "./actions";
+import {removeFeat, buyItem} from "./actions";
 
 const App = (props) => {
 //possible to destructure from props by doing: const {removeFeat, buyItem, totalPrice} = props; which will allow to not use props.removeFeat();
   console.log(props)
 
 
-  const removeFeature = item => {
-    // dispatch an action here to remove an item
-    item.preventDefault();
-    props.removeFeat();
-  };
+  // const removeFeature = item => {
+  //   // dispatch an action here to remove an item
+  //   item.preventDefault();
+  //   props.removeFeat();
+  // };
 
-  const buyItem = item => {
-    // dipsatch an action here to add an item
-    item.preventDefault();
-    props.buyItem(item);
-  };
+  // const buyItem = item => {
+  //   // dipsatch an action here to add an item
+  //   item.preventDefault();
+  //   props.buyItem(item);
+  // };
 
   return (
     <div className="boxes">
@@ -50,4 +50,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {removeFeat, buyItem, totalPrice})(App);
+export default connect(mapStateToProps, {removeFeat, buyItem})(App);
